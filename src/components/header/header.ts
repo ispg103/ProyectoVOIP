@@ -1,6 +1,6 @@
 import styles from './header.css'
 
-export enum Attribute2 {
+export enum headerAttribute {
     "image" = "image",
 }
 
@@ -8,7 +8,7 @@ class Header extends HTMLElement {
     image?: string;
 
     static get observedAttributes() {
-        const attrs: Record<Attribute2, null> = {
+        const attrs: Record<headerAttribute, null> = {
            image: null,
         };
         return Object.keys(attrs);
@@ -23,7 +23,7 @@ class Header extends HTMLElement {
         this.render();
     }
     
-    attributeChangedCallback(propName: Attribute2, oldValue: undefined, newValue: string){
+    attributeChangedCallback(propName: headerAttribute, oldValue: undefined, newValue: string){
         switch(propName){
         default:
         this[propName] = newValue;

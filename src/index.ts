@@ -1,38 +1,20 @@
-import * as components from './components/export'
-import homedata from './datas/homedata'
+import "./components/export"
+import "./screens/dashboard"
 
-import Home, {Attribute1} from "./components/homes/homes"
-
-class AppContainer extends HTMLElement{
-    home: Home[] = []    
-
-     constructor(){
-        super()
-        this.attachShadow({mode: 'open'})
-
-        homedata.forEach((card)=>{
-            const homeCard=this.ownerDocument.createElement('my-home') as Home
-            homeCard.setAttribute(Attribute1.image, card.image)
-            this.home.push(homeCard);
-         });
-     }
-
-    connectedCallback(){
-       this.render();
+class AppContainer extends HTMLElement {
+    constructor(){
+        super();
+        this.attachShadow({mode: "open"})
     }
 
-
-    render(){
-      if(this.shadowRoot){
-       this.shadowRoot.innerHTML=``
-      }
-
-      this.home.forEach((card) => {
-         this.shadowRoot?.appendChild(card);
-      });
-   
+    connectedCallback() {
+        this.render()
     }
 
+    render() {
+        const window = this.ownerDocument.createElement('app-dashboard');
+        this.shadowRoot?.appendChild(window);
+    }
 }
 
-customElements.define("app-container", AppContainer);
+customElements.define('app-container', AppContainer)

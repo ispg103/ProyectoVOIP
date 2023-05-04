@@ -1,6 +1,6 @@
 import styles from './home.css'
 
-export enum Attribute1 {
+export enum homeAttribute {
     "image" = "image",
 }
 
@@ -8,7 +8,7 @@ class Home extends HTMLElement {
     image?: string;
 
     static get observedAttributes() {
-        const attrs: Record<Attribute1, null> = {
+        const attrs: Record<homeAttribute, null> = {
             image: null,
         };
         return Object.keys(attrs);
@@ -23,7 +23,7 @@ class Home extends HTMLElement {
         this.render();
     }
     
-    attributeChangedCallback(propName: Attribute1, oldValue: undefined, newValue: string){
+    attributeChangedCallback(propName: homeAttribute, oldValue: undefined, newValue: string){
         switch(propName){
         default:
         this[propName] = newValue;
