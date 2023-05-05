@@ -1,0 +1,13 @@
+section{
+    display: flex;
+    position: fixed;
+    height: 9%;
+    width: 8%;
+    top: 0;
+    left: 0;
+}
+
+.background{
+    width: 10px;
+    height: 20px;
+}

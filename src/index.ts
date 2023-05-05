@@ -1,5 +1,5 @@
 import "./components/export"
-import "./screens/dashboard"
+import "./screens/login/login"
 
 class AppContainer extends HTMLElement {
     constructor(){
@@ -12,8 +12,9 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const window = this.ownerDocument.createElement('app-dashboard');
-        this.shadowRoot?.appendChild(window);
+
+        const Login = this.ownerDocument.createElement('my-login');
+        this.shadowRoot?.appendChild(Login);
     }
 }
 
