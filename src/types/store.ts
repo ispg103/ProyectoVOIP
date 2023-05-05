@@ -1,4 +1,5 @@
 import { Posts } from "./post"
+import { Home } from "./home"
 
 export type Observer = ({ render: () => void } & HTMLElement);
 
@@ -8,6 +9,7 @@ export type AppState = {
         email: string,
     },
     post: Posts[]
+    home: Home[]
 }
 
 export enum AuthActions {
@@ -18,6 +20,11 @@ export enum AuthActions {
 export enum PostsActions {
     "AddPost" = "AddPost",
     "GetPost" = "GetPost",
+}
+
+export enum HomeActions {
+    "AddHome" = "AddHome",
+    "GetHome" = "GetHome",
 }
 
 export interface LogInAction {
@@ -41,5 +48,16 @@ export interface GetPostAction {
     payload: Posts[]
 }
 
+export interface AddHomeAction {
+    action: HomeActions.AddHome,
+    payload: Home
+}
 
-export type Actions = LogInAction | LogOutAction | AddPostAction | GetPostAction;
+
+export interface GetHomeAction {
+    action: HomeActions.GetHome,
+    payload: Home[]
+}
+
+
+export type Actions = LogInAction | LogOutAction | AddPostAction | GetPostAction | AddHomeAction | GetHomeAction;

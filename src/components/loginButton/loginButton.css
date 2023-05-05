@@ -1,10 +1,9 @@
 .loginButton{
     position: absolute;
-    width: 150px;
-    height: 55px;
-    left: 761.77px;
-    top: 80%;
-    filter: drop-shadow(2px 4px 11px rgba(0, 0, 0, 0.25));
+    width: 130px;
+    height: 50px;
+    left: 45.6%;
+    top: 60%;
     background-color: #75DAC7;
     border: none;
     border-radius: 10px;

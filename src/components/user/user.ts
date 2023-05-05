@@ -1,6 +1,6 @@
-import BgStyle from "./background.css"
+import userStyle from "./user.css"
 
-class BG extends HTMLElement {
+class User extends HTMLElement {
 
     constructor() {
         super();
@@ -15,19 +15,19 @@ class BG extends HTMLElement {
         render() {
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = BgStyle;
+            css.innerHTML = userStyle;
             this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <section>
-                    <img class="background" src="/images/background1.png">
-                </section>
+               
+                <input type="email" class="user" placeholder="Email">
+
                 `;
             }
 
         }
 }
 
-customElements.define("my-bg", BG);
-export default BG;
+customElements.define("my-user", User);
+export default User;

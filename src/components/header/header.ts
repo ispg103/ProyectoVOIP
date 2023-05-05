@@ -1,18 +1,6 @@
-import styles from './header.css'
-
-export enum headerAttribute {
-    "image" = "image",
-}
+import headerStyles from './header.css'
 
 class Header extends HTMLElement {
-    image?: string;
-
-    static get observedAttributes() {
-        const attrs: Record<headerAttribute, null> = {
-           image: null,
-        };
-        return Object.keys(attrs);
-    }
     
     constructor() {
         super();
@@ -22,23 +10,11 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.render();
     }
-    
-    attributeChangedCallback(propName: headerAttribute, oldValue: undefined, newValue: string){
-        switch(propName){
-        default:
-        this[propName] = newValue;
-        this.render();
-        break;
-        }
-        this.render()
-    }
         
-        render() {
+    render() {
+
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <style>
-                ${styles}
-                </style>
                 
                 <section class="bar">
                 <img src="./src/images/voip.png" class="image">
@@ -55,7 +31,13 @@ class Header extends HTMLElement {
                 </section>
                 `;
             }
+
+            const css = this.ownerDocument.createElement("style");
+            css.innerHTML = headerStyles;
+            this.shadowRoot?.appendChild(css);
+
         }
+
     }
 
     customElements.define("my-header", Header);

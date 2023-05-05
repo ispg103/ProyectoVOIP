@@ -1,0 +1,9 @@
+.text{
+    position: absolute;
+    left: 690px;
+    top: 500px;
+    font-family: 'Inter';
+    font-size: small;
+    color: #58CEB8;
+    width: 500px;
+}

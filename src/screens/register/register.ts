@@ -1,14 +1,16 @@
-import loginStyle from "./login.css";
+import registerStyle from "./register.css";
 
-import LoginTitle from "../../components/loginTitle/loginTitle";
-import LoginButton from "../../components/loginButton/loginButton";
+import RegisterTitle from "../../components/registerTitle/registerTitle";
+import RegisterButton from "../../components/registerButton/registerButton";
 import User from "../../components/user/user";
 import Password from "../../components/password/password";
-import LoginText from "../../components/loginText/loginText";
 import BG from "../../components/background/background";
 import Logo from "../../components/logo/logo"
+import Name from "../../components/name/name"
+import LastName from "../../components/lastname/lastname"
+import CPassword from "../../components/cPassword/cPassword";
 
-export class Login extends HTMLElement{
+export class Register extends HTMLElement{
     constructor (){
         super();
         this.attachShadow ({mode:"open"})
@@ -23,21 +25,27 @@ export class Login extends HTMLElement{
             this.shadowRoot.innerHTML = ``;
           
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = loginStyle;
+            css.innerHTML = registerStyle;
             this.shadowRoot?.appendChild(css);
         }
 
         const h1 = this.ownerDocument.createElement("h1")
         h1.className = 'Title'
-        const LoginTitle = this.ownerDocument.createElement("login-title") as LoginTitle;
-        h1.appendChild(LoginTitle)
+        const RegisterTitle = this.ownerDocument.createElement("register-title") as RegisterTitle;
+        h1.appendChild(RegisterTitle)
         this.shadowRoot?.appendChild(h1);
 
-        const text = this.ownerDocument.createElement("a")
-        text.className = 'Text'
-        const LoginText = this.ownerDocument.createElement("login-text") as LoginText;
-        text.appendChild(LoginText)
-        this.shadowRoot?.appendChild(text);
+        const name = this.ownerDocument.createElement("form")
+        name.className = 'Name'
+        const Name = this.ownerDocument.createElement("my-name") as Name;
+        name.appendChild(Name)
+        this.shadowRoot?.appendChild(name);
+
+        const lastname = this.ownerDocument.createElement("form")
+        lastname.className = 'LastName'
+        const LastName = this.ownerDocument.createElement("last-name") as LastName;
+        lastname.appendChild(LastName)
+        this.shadowRoot?.appendChild(lastname);
 
         const user = this.ownerDocument.createElement("form")
         user.className = 'User'
@@ -51,10 +59,16 @@ export class Login extends HTMLElement{
         password.appendChild(Password)
         this.shadowRoot?.appendChild(password);
 
+        const cpassword = this.ownerDocument.createElement("form")
+        cpassword.className = 'CPassword'
+        const CPassword = this.ownerDocument.createElement("confirm-password") as CPassword;
+        cpassword.appendChild(CPassword)
+        this.shadowRoot?.appendChild(cpassword);
+
         const button = this.ownerDocument.createElement("section")
         button.className = 'Button'
-        const LoginButton = this.ownerDocument.createElement("login-button") as LoginButton;
-        button.appendChild(LoginButton)
+        const RegisterButton = this.ownerDocument.createElement("register-button") as RegisterButton;
+        button.appendChild(RegisterButton)
         this.shadowRoot?.appendChild(button);
 
         const logo = this.ownerDocument.createElement("logo")
@@ -73,5 +87,5 @@ export class Login extends HTMLElement{
 
 }
 
-customElements.define("my-login", Login);
+customElements.define("my-register", Register);
     

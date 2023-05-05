@@ -1,4 +1,4 @@
-import { Actions, AppState, AuthActions, PostsActions } from "../types/store";
+import { Actions, AppState, AuthActions, PostsActions, HomeActions } from "../types/store";
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
     const { action, payload } = currentAction; 
@@ -33,6 +33,21 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                 ...currentState,
                 post: payload
             }
+
+        case HomeActions.AddHome:
+            return {
+                ...currentState,
+                home: [
+                    payload,
+                    ...currentState.post,
+                    ]
+                }
+            
+        case HomeActions.GetHome:
+            return {
+                ...currentState,
+                home: payload
+                }
     
         default:
             return currentState;

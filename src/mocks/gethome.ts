@@ -1,8 +1,7 @@
 import { Home } from '../types/home';
 
-class HomePic {
-  get(): Home[] {
-    return [
+export const homepic: Home[] = [
+    
     {
         image: "/image/image1.png"
     },
@@ -38,7 +37,3 @@ class HomePic {
 
     },  
     ];
-  }
-}
-
-export default new HomePic;

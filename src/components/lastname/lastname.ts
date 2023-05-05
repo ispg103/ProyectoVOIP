@@ -1,6 +1,6 @@
-import BgStyle from "./background.css"
+import lastnameStyle from "./lastname.css"
 
-class BG extends HTMLElement {
+class LastName extends HTMLElement {
 
     constructor() {
         super();
@@ -15,19 +15,19 @@ class BG extends HTMLElement {
         render() {
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = BgStyle;
+            css.innerHTML = lastnameStyle;
             this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <section>
-                    <img class="background" src="/images/background1.png">
-                </section>
+               
+                <input type="name" class="lastname" placeholder="Last Name">
+
                 `;
             }
 
         }
 }
 
-customElements.define("my-bg", BG);
-export default BG;
+customElements.define("last-name", LastName);
+export default LastName;

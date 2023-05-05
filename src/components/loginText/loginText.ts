@@ -1,6 +1,6 @@
-import loginTitleStyle from "./loginTitle.css"
+import loginTextStyle from "./loginText.css"
 
-class LoginTitle extends HTMLElement {
+class LoginText extends HTMLElement {
 
     constructor() {
         super();
@@ -15,19 +15,19 @@ class LoginTitle extends HTMLElement {
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <section>
-                    <h1 class="title">Welcome</h1>
-                </section>
+
+                    <a class="text">Create an account</a>
+
                 `;
             }
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = loginTitleStyle;
+            css.innerHTML = loginTextStyle;
             this.shadowRoot?.appendChild(css);
 
             
         }
 }
 
-customElements.define("login-title", LoginTitle);
-export default LoginTitle;
+customElements.define("login-text", LoginText);
+export default LoginText;

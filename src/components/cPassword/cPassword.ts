@@ -1,6 +1,6 @@
-import BgStyle from "./background.css"
+import cPasswordStyle from "./cPassword.css"
 
-class BG extends HTMLElement {
+class CPassword extends HTMLElement {
 
     constructor() {
         super();
@@ -15,19 +15,19 @@ class BG extends HTMLElement {
         render() {
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = BgStyle;
+            css.innerHTML = cPasswordStyle;
             this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <section>
-                    <img class="background" src="/images/background1.png">
-                </section>
+               
+                <input type="password" class="password" placeholder="Confirm Password">
+
                 `;
             }
 
         }
 }
 
-customElements.define("my-bg", BG);
-export default BG;
+customElements.define("confirm-password", CPassword);
+export default CPassword;

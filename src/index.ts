@@ -1,5 +1,6 @@
 import "./components/export"
-import "./screens/login/login"
+import "./screens/register/register"
+
 
 class AppContainer extends HTMLElement {
     constructor(){
@@ -13,8 +14,8 @@ class AppContainer extends HTMLElement {
 
     render() {
 
-        const Login = this.ownerDocument.createElement('my-login');
-        this.shadowRoot?.appendChild(Login);
+        const window = this.ownerDocument.createElement('my-register');
+        this.shadowRoot?.appendChild(window);
     }
 }
 

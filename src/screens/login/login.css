@@ -1,16 +1,30 @@
-.Form{
-    height: 50px;
+.Title{
     position: absolute;
-    width: 490.27px;
-    height: 74.39px;
-    left: 618.36px;
-    top: 422.67px;
 }
 
-.Button{
-    width: 10%;
+.Text{
+    position: absolute;
+    color: aqua;
 }
 
-.Background{
-    position: static;
+.User{
+    position: absolute;
+    left: 675px;
+    top: 290px;
+    font-family: 'Inter';
+}
+
+.Password{
+    position: absolute;
+    left: 675px;
+    top: 350px;
+    font-family: 'Inter';
+}
+
+.Logo{
+    position: absolute;
+    width: 100px;
+    top: 92%;
+    left: 92%;
+
 }

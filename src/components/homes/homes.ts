@@ -4,7 +4,7 @@ export enum homeAttribute {
     "image" = "image",
 }
 
-class Home extends HTMLElement {
+class Homes extends HTMLElement {
     image?: string;
 
     static get observedAttributes() {
@@ -23,22 +23,23 @@ class Home extends HTMLElement {
         this.render();
     }
     
-    attributeChangedCallback(propName: homeAttribute, oldValue: undefined, newValue: string){
-        switch(propName){
-        default:
-        this[propName] = newValue;
-        this.render();
-        break;
+    attributeChangedCallback(
+        propimg: homeAttribute,
+        _: string | undefined,
+        newValue: string | undefined
+        ) {
+            switch (propimg) {
+                default:
+                this[propimg] = newValue;
+                break;
+            }
+
+            this.render();
         }
-        this.render()
-    }
         
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <style>
-                ${styles}
-                </style>
 
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
@@ -52,8 +53,12 @@ class Home extends HTMLElement {
                 </div>
                 `;
             }
+
+            const css = this.ownerDocument.createElement("style");
+            css.innerHTML = styles;
+            this.shadowRoot?.appendChild(css);
         }
     }
 
-    customElements.define("my-home", Home);
-    export default Home;
+    customElements.define("my-home", Homes);
+    export default Homes;

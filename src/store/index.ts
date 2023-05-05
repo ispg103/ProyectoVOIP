@@ -8,6 +8,7 @@ const emptyState: AppState = {
     email: "",
   },
   post: [],
+  home: [],
 };
 
 export let appState = Storage.get<AppState>({

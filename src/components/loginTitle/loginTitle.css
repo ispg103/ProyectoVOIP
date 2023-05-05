@@ -1,18 +1,10 @@
 h1{
 position: absolute;
-width: 337px;
-height: 61px;
-left: 695px;
-top: 342px;
+left: 660px;
+top: 130px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
-font-size: 32px;
-line-height: 39px;
-text-align: center;
+font-size: 40px;
 color: black;
-background-color: white;
-height: 80%;
-width: 25%;
-border-radius: 10px;
 }
