@@ -1,6 +1,6 @@
-import loginTextStyle from "./loginText.css"
+import uploadTextStyle from "./uploadText.css"
 
-class LoginText extends HTMLElement {
+class UploadText extends HTMLElement {
 
     constructor() {
         super();
@@ -16,18 +16,18 @@ class LoginText extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
 
-                    <a href="" class="text">Create an account</a>
+                    <h3 class="text">Upload your designs here</h3>
 
                 `;
             }
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = loginTextStyle;
+            css.innerHTML = uploadTextStyle;
             this.shadowRoot?.appendChild(css);
 
             
         }
 }
 
-customElements.define("login-text", LoginText);
-export default LoginText;
+customElements.define("upload-text", UploadText);
+export default UploadText;

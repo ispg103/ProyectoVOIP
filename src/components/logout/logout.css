@@ -1,14 +1,11 @@
-.text{
+.logout{
     position: absolute;
-    left: 690px;
-    top: 500px;
     font-family: 'Inter';
     font-size: small;
     color: #58CEB8;
-    width: 500px;
 }
 
-.text:hover{
-    color: rgb(0, 157, 128);
+.logout:hover{
+    color: rgb(0, 0, 0);
     transition: color.3s;
 }

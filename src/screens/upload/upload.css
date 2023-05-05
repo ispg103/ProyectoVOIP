@@ -1,0 +1,94 @@
+.Logo{
+    position: absolute;
+}
+
+.SearchBar{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 500px;
+}
+
+.Logout{
+    position: absolute;
+    margin-left: 1290px;
+    width: 50px;
+}
+
+.Add{
+    position: absolute;
+    margin-left: 1360px;
+    margin-top: 8px;
+}
+
+.Heart{
+    position: absolute;
+    margin-left: 1410px;
+    margin-top: 8px;
+}
+
+.Profile{
+    position: absolute;
+    margin-left: 1460px;
+    margin-top: 8px;
+}
+
+
+.BigSquare{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+}
+
+.Exit{
+    position: absolute;
+    top: 15%;
+    left: 28%;
+}
+
+.LittleSquare{
+    position: absolute;
+    top: 21%;
+    left: 30%;
+}
+
+.UploadImg{
+    position: absolute;
+    top: 55%;
+    left: 41%;
+}
+
+.UploadText{
+    position: absolute;
+    width: 300px;
+    top: 67%;
+    left: 34.5%;
+}
+
+.AddTitle{
+    position: absolute;
+    margin-top: 35%;
+    margin-left: 57%;
+    width: 200px;
+}
+
+.UName{
+    position: absolute;
+    margin-top: 37.5%;
+    margin-left: 57%;
+    width: 100px;
+}
+
+.Describe{
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 57%;
+    width: 200px;
+}
+
+.UploadButton{
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 51%;
+    width: 200px;
+}
+

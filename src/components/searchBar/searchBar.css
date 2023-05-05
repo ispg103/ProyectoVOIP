@@ -1,0 +1,8 @@
+.search{
+    font-family: 'Inter';
+    width: 100px;
+}
+
+::placeholder{
+    font-family: 'Inter';
+}

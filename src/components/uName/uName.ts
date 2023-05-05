@@ -1,6 +1,6 @@
-import loginTextStyle from "./loginText.css"
+import uNameStyle from "./uName.css"
 
-class LoginText extends HTMLElement {
+class UName extends HTMLElement {
 
     constructor() {
         super();
@@ -16,18 +16,18 @@ class LoginText extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
 
-                    <a href="" class="text">Create an account</a>
+                    <p class="text">Your name</p>
 
                 `;
             }
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = loginTextStyle;
+            css.innerHTML = uNameStyle;
             this.shadowRoot?.appendChild(css);
 
             
         }
 }
 
-customElements.define("login-text", LoginText);
-export default LoginText;
+customElements.define("your-name", UName);
+export default UName;

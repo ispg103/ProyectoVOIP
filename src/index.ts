@@ -1,5 +1,5 @@
 import "./components/export"
-import "./screens/register/register"
+import "./screens/login/login"
 
 
 class AppContainer extends HTMLElement {
@@ -14,7 +14,7 @@ class AppContainer extends HTMLElement {
 
     render() {
 
-        const window = this.ownerDocument.createElement('my-register');
+        const window = this.ownerDocument.createElement('my-login');
         this.shadowRoot?.appendChild(window);
     }
 }

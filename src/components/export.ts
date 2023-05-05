@@ -1,4 +1,3 @@
-export { default as Header } from "./header/header";
 export { default as Home } from "./homes/homes";
 export {default as User} from "./user/user";
 export {default as Password} from "./password/password";
@@ -12,3 +11,20 @@ export {default as Name} from "./name/name"
 export {default as LastName} from "./lastname/lastname"
 export {default as cPassword} from "./cPassword/cPassword"
 export {default as RegisterButton} from "./registerButton/registerButton"
+export {default as Add} from "./add/add"
+export {default as Heart} from "./heart/heart"
+export {default as Logout} from "./logout/logout"
+export {default as Profile} from "./profile/profile"
+export {default as SearchBar} from "./searchBar/searchBar"
+export {default as BigSquare} from "./bigSquare/bigSquare"
+export {default as LittleSquare} from "./littleSquare/littleSquare"
+export {default as UploadButton} from "./uploadBtn/uploadBtn"
+export {default as UploadText} from "./uploadText/uploadText"
+export {default as UploadImg} from "./uploadimg/uploadimg"
+export {default as AddTitle} from "./addTitle/addTitle"
+export {default as UName} from "./uName/uName"
+export {default as Describe} from "./describe/describe"
+export {default as Dog} from "./dog/dog"
+export {default as SaveButton} from "./saveBtn/saveBtn"
+export {default as Exit} from "./exit/exit"
+export {default as Tattoo} from "./tattoo/tattoo"

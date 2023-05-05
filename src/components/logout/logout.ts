@@ -1,6 +1,6 @@
-import loginTextStyle from "./loginText.css"
+import logoutStyle from "./logout.css"
 
-class LoginText extends HTMLElement {
+class Logout extends HTMLElement {
 
     constructor() {
         super();
@@ -16,18 +16,18 @@ class LoginText extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
 
-                    <a href="" class="text">Create an account</a>
+                    <a href="" class="logout">Log out</a>
 
                 `;
             }
 
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = loginTextStyle;
+            css.innerHTML = logoutStyle;
             this.shadowRoot?.appendChild(css);
 
             
         }
 }
 
-customElements.define("login-text", LoginText);
-export default LoginText;
+customElements.define("my-logout", Logout);
+export default Logout;

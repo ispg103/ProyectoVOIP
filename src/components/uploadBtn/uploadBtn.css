@@ -1,0 +1,18 @@
+.uploadButton{
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    left: 45.6%;
+    top: 65%;
+    background-color: #75DAC7;
+    border: none;
+    border-radius: 10px;
+    font-size: medium;
+    font-family: 'Inter';
+    color: white;
+}
+
+.uploadButton:hover{
+    background-color: rgb(1, 201, 164);
+    transition: background-color.3s;
+}
