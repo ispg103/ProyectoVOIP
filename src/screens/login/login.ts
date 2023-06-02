@@ -13,11 +13,11 @@ import { addObserver, appState, dispatch } from "../../store/index";
 const credentials = { email: "", password: "" };
 
 export class Login extends HTMLElement{
-    constructor (){
+    constructor() {
         super();
-        this.attachShadow ({mode:"open"})
-        addObserver(this)
-    }
+        this.attachShadow({ mode: "open" });
+        console.log('AppState',appState.user);
+      }
 
     connectedCallback(){
         this.render();
@@ -52,13 +52,24 @@ export class Login extends HTMLElement{
         const email = this.ownerDocument.createElement("input")
         email.className = 'User'
         email.placeholder = "Email"
+        email.type = "email"
         this.shadowRoot?.appendChild(email);
+        email.addEventListener(
+            "change",
+            (e: any) => (credentials.email = e.target.value)
+          );
+          this.shadowRoot?.appendChild(email);
 
         const password = this.ownerDocument.createElement("input")
         password.className = 'Password'
         password.placeholder = "Password"
         password.type = "password";
         this.shadowRoot?.appendChild(password);
+        password.addEventListener(
+            "change",
+            (e: any) => (credentials.password = e.target.value)
+          );
+          this.shadowRoot?.appendChild(password);
 
         const button = this.ownerDocument.createElement("section")
         button.className = 'Button'
