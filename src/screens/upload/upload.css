@@ -1,11 +1,19 @@
 .Logo{
     position: absolute;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffffff;
 }
 
 .SearchBar{
     position: absolute;
     margin-top: 10px;
     margin-left: 500px;
+    width: 400px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
 }
 
 .Logout{
@@ -18,19 +26,36 @@
     position: absolute;
     margin-left: 1360px;
     margin-top: 8px;
+    border-radius: 500px;
+    border: none;
+    height: 35px;
+    width: 43px;
+    background-color: #ffffff;
 }
 
 .Heart{
     position: absolute;
     margin-left: 1410px;
     margin-top: 8px;
+    border-radius: 500px;
+    border: none;
+    height: 35px;
+    width: 43px;
+    padding: 2px;
+    background-color: #ffffff;
 }
 
 .Profile{
     position: absolute;
     margin-left: 1460px;
     margin-top: 8px;
+    border-radius: 500px;
+    border: none;
+    height: 35px;
+    width: 43px;
+    background-color: #ffffff;
 }
+
 
 
 .BigSquare{
@@ -43,6 +68,7 @@
     position: absolute;
     top: 15%;
     left: 28%;
+    border: none;
 }
 
 .LittleSquare{

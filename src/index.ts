@@ -18,7 +18,7 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const window = this.ownerDocument.createElement('my-login');
+        const window = this.ownerDocument.createElement('my-upload');
         this.shadowRoot?.appendChild(window);
     }
 }

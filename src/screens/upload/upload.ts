@@ -1,7 +1,7 @@
 import uploadStyle from "./upload.css"
 
 import Logo from "../../components/logo/logo"
-import SearchBar from "../../components/searchBar/searchBar"
+
 import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
 import Heart from "../../components/heart/heart"
@@ -35,16 +35,15 @@ export class Upload extends HTMLElement{
             this.shadowRoot?.appendChild(css);
         }
 
-        const logo = this.ownerDocument.createElement("logo")
+        const logo = this.ownerDocument.createElement("button")
         logo.className = 'Logo'
         const Logo = this.ownerDocument.createElement("my-logo") as Logo;
         logo.appendChild(Logo)
         this.shadowRoot?.appendChild(logo);
 
-        const searchBar = this.ownerDocument.createElement("section")
+        const searchBar = this.ownerDocument.createElement("input")
+        searchBar.placeholder = "Search"
         searchBar.className = 'SearchBar'
-        const SearchBar = this.ownerDocument.createElement("search-bar") as SearchBar;
-        searchBar.appendChild(SearchBar)
         this.shadowRoot?.appendChild(searchBar);
 
         const logout = this.ownerDocument.createElement("p")
@@ -53,19 +52,19 @@ export class Upload extends HTMLElement{
         logout.appendChild(Logout)
         this.shadowRoot?.appendChild(logout);
 
-        const image = this.ownerDocument.createElement("image")
+        const image = this.ownerDocument.createElement("button")
         image.className = 'Add'
         const Add = this.ownerDocument.createElement("my-add") as Add;
         image.appendChild(Add)
         this.shadowRoot?.appendChild(image);
 
-        const image2 = this.ownerDocument.createElement("image")
+        const image2 = this.ownerDocument.createElement("button")
         image2.className = 'Heart'
         const Heart = this.ownerDocument.createElement("my-heart") as Heart;
         image2.appendChild(Heart)
         this.shadowRoot?.appendChild(image2);
 
-        const image3 = this.ownerDocument.createElement("image")
+        const image3 = this.ownerDocument.createElement("button")
         image3.className = 'Profile'
         const Profile = this.ownerDocument.createElement("my-profile") as Profile;
         image3.appendChild(Profile)
@@ -79,7 +78,7 @@ export class Upload extends HTMLElement{
         bigSquare.appendChild(BigSquare)
         this.shadowRoot?.appendChild(bigSquare);
         
-        const exit = this.ownerDocument.createElement("image")
+        const exit = this.ownerDocument.createElement("button")
         exit.className = 'Exit'
         const Exit = this.ownerDocument.createElement("my-exit") as Exit;
         exit.appendChild(Exit)
@@ -97,7 +96,7 @@ export class Upload extends HTMLElement{
         uploadBtn.appendChild(UploadButton)
         this.shadowRoot?.appendChild(uploadBtn);
 
-        const addTitle = this.ownerDocument.createElement("h3")
+        const addTitle = this.ownerDocument.createElement("a")
         addTitle.className = 'AddTitle'
         const AddTitle = this.ownerDocument.createElement("add-title") as AddTitle;
         addTitle.appendChild(AddTitle)
