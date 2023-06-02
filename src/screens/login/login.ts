@@ -2,8 +2,6 @@ import loginStyle from "./login.css";
 
 import LoginTitle from "../../components/loginTitle/loginTitle";
 import LoginButton from "../../components/loginButton/loginButton";
-import User from "../../components/user/user";
-import Password from "../../components/password/password";
 import LoginText from "../../components/loginText/loginText";
 import BG from "../../components/background/background";
 import Logo from "../../components/logo/logo"
@@ -51,16 +49,15 @@ export class Login extends HTMLElement{
         text.appendChild(LoginText)
         this.shadowRoot?.appendChild(text);
 
-        const email = this.ownerDocument.createElement("form")
+        const email = this.ownerDocument.createElement("input")
         email.className = 'User'
-        const User = this.ownerDocument.createElement("my-user") as User;
-        email.appendChild(User)
+        email.placeholder = "Email"
         this.shadowRoot?.appendChild(email);
 
-        const password = this.ownerDocument.createElement("form")
+        const password = this.ownerDocument.createElement("input")
         password.className = 'Password'
-        const Password = this.ownerDocument.createElement("my-password") as Password;
-        password.appendChild(Password)
+        password.placeholder = "Password"
+        password.type = "password";
         this.shadowRoot?.appendChild(password);
 
         const button = this.ownerDocument.createElement("section")

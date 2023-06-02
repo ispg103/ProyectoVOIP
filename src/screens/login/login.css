@@ -9,16 +9,26 @@
 
 .User{
     position: absolute;
-    left: 675px;
-    top: 290px;
-    font-family: 'Inter';
+    left: 630px;
+    top: 275px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    width: 250px;
+    height: 40px;
+    text-align: center;
 }
 
 .Password{
     position: absolute;
-    left: 675px;
-    top: 350px;
-    font-family: 'Inter';
+    left: 630px;
+    top: 345px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    width: 250px;
+    height: 40px;
+    text-align: center;
 }
 
 .Logo{
