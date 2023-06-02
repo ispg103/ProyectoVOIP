@@ -16,16 +16,17 @@ export class Login extends HTMLElement{
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
-        console.log('AppState',appState.user);
+        addObserver(this);
       }
 
     connectedCallback(){
         this.render();
+        console.log('AppState', appState.user);
      }
 
      async handleLoginButton() {
         Firebase.loginUser(credentials);
-        dispatch(navigate(Screens.HOME))
+        console.log(appState.user)
       }
 
     render() {
