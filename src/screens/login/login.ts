@@ -7,16 +7,28 @@ import Password from "../../components/password/password";
 import LoginText from "../../components/loginText/loginText";
 import BG from "../../components/background/background";
 import Logo from "../../components/logo/logo"
+import { navigate } from "../../store/actions";
+import Firebase from "../../utils/firebase";
+import { Screens } from "../../types/navigation";
+import { addObserver, appState, dispatch } from "../../store/index";
+
+const credentials = { email: "", password: "" };
 
 export class Login extends HTMLElement{
     constructor (){
         super();
         this.attachShadow ({mode:"open"})
+        addObserver(this)
     }
 
     connectedCallback(){
         this.render();
      }
+
+     async handleLoginButton() {
+        Firebase.loginUser(credentials);
+        dispatch(navigate(Screens.HOME))
+      }
 
     render() {
         if (this.shadowRoot) {
@@ -39,11 +51,11 @@ export class Login extends HTMLElement{
         text.appendChild(LoginText)
         this.shadowRoot?.appendChild(text);
 
-        const user = this.ownerDocument.createElement("form")
-        user.className = 'User'
+        const email = this.ownerDocument.createElement("form")
+        email.className = 'User'
         const User = this.ownerDocument.createElement("my-user") as User;
-        user.appendChild(User)
-        this.shadowRoot?.appendChild(user);
+        email.appendChild(User)
+        this.shadowRoot?.appendChild(email);
 
         const password = this.ownerDocument.createElement("form")
         password.className = 'Password'

@@ -1,5 +1,10 @@
 import "./components/export"
 import "./screens/login/login"
+import "./screens/upload/upload"
+import "./screens/home/home"
+import "./screens/photo/photo"
+import "./screens/register/register"
+import "./screens/post/post"
 
 
 class AppContainer extends HTMLElement {
@@ -9,11 +14,10 @@ class AppContainer extends HTMLElement {
     }
 
     connectedCallback() {
-        this.render()
+        this.render();
     }
 
     render() {
-
         const window = this.ownerDocument.createElement('my-login');
         this.shadowRoot?.appendChild(window);
     }

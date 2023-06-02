@@ -7,13 +7,9 @@ import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
 import Heart from "../../components/heart/heart"
 import Profile from "../../components/profile/profile"
-import Homes, {homeAttribute} from "../../components/homes/homes";
 import { addObserver, appState, dispatch } from "../../store/index";
-import { getPost } from "../../store/actions";
-import { getHome } from "../../store/actions";
 
 export class Home extends HTMLElement{
-    List: Homes[] = [];
 
     constructor (){
         super();
@@ -64,17 +60,6 @@ export class Home extends HTMLElement{
         const Profile = this.ownerDocument.createElement("my-profile") as Profile;
         image3.appendChild(Profile)
         this.shadowRoot?.appendChild(image3);
-
-
-
-        const dataHome = appState.post.filter((user)=>{
-        })
-    
-        dataHome.forEach((data) => {
-          const Card = this.ownerDocument.createElement("my-home") as Homes;
-          Card.setAttribute(homeAttribute.image, data.image);
-              this.List.push(Card);
-        });
       
 
 

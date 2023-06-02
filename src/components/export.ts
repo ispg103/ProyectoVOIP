@@ -1,4 +1,3 @@
-export { default as Home } from "./homes/homes";
 export {default as User} from "./user/user";
 export {default as Password} from "./password/password";
 export {default as LoginTitle} from "./loginTitle/loginTitle";
