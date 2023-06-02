@@ -75,6 +75,7 @@ export class Login extends HTMLElement{
         button.className = 'Button'
         const LoginButton = this.ownerDocument.createElement("login-button") as LoginButton;
         button.appendChild(LoginButton)
+        button.addEventListener("click", this.handleLoginButton);
         this.shadowRoot?.appendChild(button);
 
         const logo = this.ownerDocument.createElement("logo")
