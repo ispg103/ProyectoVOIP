@@ -2,13 +2,10 @@ import registerStyle from "./register.css";
 
 import RegisterTitle from "../../components/registerTitle/registerTitle";
 import RegisterButton from "../../components/registerButton/registerButton";
-import User from "../../components/user/user";
-import Password from "../../components/password/password";
 import BG from "../../components/background/background";
 import Logo from "../../components/logo/logo"
-import Name from "../../components/name/name"
-import LastName from "../../components/lastname/lastname"
-import CPassword from "../../components/cPassword/cPassword";
+
+const credentials = { email: "", password: "" };
 
 export class Register extends HTMLElement{
     constructor (){
@@ -35,34 +32,42 @@ export class Register extends HTMLElement{
         h1.appendChild(RegisterTitle)
         this.shadowRoot?.appendChild(h1);
 
-        const name = this.ownerDocument.createElement("form")
+        const name = this.ownerDocument.createElement("input")
         name.className = 'Name'
-        const Name = this.ownerDocument.createElement("my-name") as Name;
-        name.appendChild(Name)
+        name.placeholder = "Name"
         this.shadowRoot?.appendChild(name);
 
-        const lastname = this.ownerDocument.createElement("form")
+        const lastname = this.ownerDocument.createElement("input")
         lastname.className = 'LastName'
-        const LastName = this.ownerDocument.createElement("last-name") as LastName;
-        lastname.appendChild(LastName)
+        lastname.placeholder = "Last Name"
         this.shadowRoot?.appendChild(lastname);
 
-        const user = this.ownerDocument.createElement("form")
-        user.className = 'User'
-        const User = this.ownerDocument.createElement("my-user") as User;
-        user.appendChild(User)
-        this.shadowRoot?.appendChild(user);
+        const email = this.ownerDocument.createElement("input")
+        email.className = 'User'
+        email.placeholder = "Email"
+        email.type = "email"
+        this.shadowRoot?.appendChild(email);
+        email.addEventListener(
+            "change",
+            (e: any) => (credentials.email = e.target.value)
+          );
+          this.shadowRoot?.appendChild(email);
 
-        const password = this.ownerDocument.createElement("form")
+        const password = this.ownerDocument.createElement("input")
         password.className = 'Password'
-        const Password = this.ownerDocument.createElement("my-password") as Password;
-        password.appendChild(Password)
+        password.placeholder = "Password"
+        password.type = "password";
         this.shadowRoot?.appendChild(password);
+        password.addEventListener(
+            "change",
+            (e: any) => (credentials.password = e.target.value)
+          );
+          this.shadowRoot?.appendChild(password);
 
-        const cpassword = this.ownerDocument.createElement("form")
+        const cpassword = this.ownerDocument.createElement("input")
         cpassword.className = 'CPassword'
-        const CPassword = this.ownerDocument.createElement("confirm-password") as CPassword;
-        cpassword.appendChild(CPassword)
+        cpassword.placeholder = "Confirm Password"
+        cpassword.type = "password"
         this.shadowRoot?.appendChild(cpassword);
 
         const button = this.ownerDocument.createElement("section")

@@ -20,23 +20,42 @@
 
 .User{
     position: absolute;
-    left: 675px;
-    top: 320px;
-    font-family: 'Inter';
+    left: 630px;
+    top: 300px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    width: 250px;
+    height: 40px;
+    text-align: center;
 }
 
 .Password{
     position: absolute;
-    left: 675px;
-    top: 365px;
-    font-family: 'Inter';
+    left: 630px;
+    top: 355px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    width: 250px;
+    height: 40px;
+    text-align: center;
 }
 
 .CPassword{
     position: absolute;
-    left: 675px;
+    left: 630px;
     top: 410px;
-    font-family: 'Inter';
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+}
+
+.Button{
+    top: 450px;
 }
 
 .Logo{

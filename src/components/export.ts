@@ -1,5 +1,3 @@
-export {default as User} from "./user/user";
-export {default as Password} from "./password/password";
 export {default as LoginTitle} from "./loginTitle/loginTitle";
 export {default as BG} from "./background/background";
 export {default as LoginButton} from "./loginButton/loginButton";
