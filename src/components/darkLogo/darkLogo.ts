@@ -1,4 +1,4 @@
-class Logo extends HTMLElement {
+class DarkLogo extends HTMLElement {
 
     constructor() {
         super();
@@ -15,7 +15,7 @@ class Logo extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
 
-                    <img class="logo" src="/images/voip.png">
+                    <img src="/images/darklogo.png">
 
                 `;
             }
@@ -23,5 +23,5 @@ class Logo extends HTMLElement {
         }
 }
 
-customElements.define("my-logo", Logo);
-export default Logo;
+customElements.define("dark-logo", DarkLogo);
+export default DarkLogo;

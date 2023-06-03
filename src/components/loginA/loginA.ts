@@ -1,4 +1,4 @@
-class Logo extends HTMLElement {
+class LoginA extends HTMLElement {
 
     constructor() {
         super();
@@ -8,20 +8,20 @@ class Logo extends HTMLElement {
     connectedCallback() {
         this.render();
     }
-
     
-        render() {
+    render() {
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-
-                    <img class="logo" src="/images/voip.png">
-
+                <section>
+                    <p>Login</p>
+                </section>
                 `;
             }
 
+           
         }
 }
 
-customElements.define("my-logo", Logo);
-export default Logo;
+customElements.define("login-a", LoginA);
+export default LoginA;
