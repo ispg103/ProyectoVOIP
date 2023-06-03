@@ -4,9 +4,6 @@ export {default as LoginButton} from "./loginButton/loginButton";
 export {default as LoginText} from "./loginText/loginText";
 export {default as Logo} from "./logo/logo";
 export {default as RegisterTitle} from "./registerTitle/registerTitle";
-export {default as Name} from "./name/name"
-export {default as LastName} from "./lastname/lastname"
-export {default as cPassword} from "./cPassword/cPassword"
 export {default as RegisterButton} from "./registerButton/registerButton"
 export {default as Add} from "./add/add"
 export {default as Heart} from "./heart/heart"

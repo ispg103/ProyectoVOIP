@@ -4,24 +4,32 @@
 
 .Name{
     position: absolute;
-    left: 620px;
-    top: 270px;
-    font-family: 'Inter';
-    width: 100px;
+    left: 630px;
+    top: 255px;
+    width: 120px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    height: 40px;
+    text-align: center;
 }
 
 .LastName{
     position: absolute;
-    left: 750px;
-    top: 270px;
-    font-family: 'Inter';
-    width: 100px;
+    left: 765px;
+    top: 255px;
+    width: 115px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    height: 40px;
+    text-align: center;
 }
 
 .User{
     position: absolute;
     left: 630px;
-    top: 300px;
+    top: 310px;
     border: none;
     border-radius: 5px;
     background-color: #ECECEC;
@@ -33,7 +41,7 @@
 .Password{
     position: absolute;
     left: 630px;
-    top: 355px;
+    top: 365px;
     border: none;
     border-radius: 5px;
     background-color: #ECECEC;
@@ -45,7 +53,7 @@
 .CPassword{
     position: absolute;
     left: 630px;
-    top: 410px;
+    top: 420px;
     border: none;
     border-radius: 5px;
     background-color: #ECECEC;
