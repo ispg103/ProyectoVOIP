@@ -31,11 +31,36 @@
 .DarkLogo{
     position: absolute;
     margin-top: 620px;
-    margin-left: 680px;
+    margin-left: 690px;
 }
 
 .LoginA{
     position: absolute;
     margin-left: 1350px;
     width: 50px;
+}
+
+.Cheers{
+    position: absolute;
+    top: 1150px;
+    left: 180px;
+    border-radius: 20px;
+}
+
+.Chanel{
+    position: absolute;
+    top: 1740px;
+    left: 930px;
+}
+
+.Inspire{
+    position: absolute;
+    left: 935px;
+    top: 1265px;
+}
+
+.Create{
+    position: absolute;
+    left: 345px;
+    top: 1850px;
 }
