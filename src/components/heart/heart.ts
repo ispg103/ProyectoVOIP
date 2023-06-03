@@ -1,5 +1,3 @@
-import heartStyle from "./heart.css"
-
 class Heart extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class Heart extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = heartStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

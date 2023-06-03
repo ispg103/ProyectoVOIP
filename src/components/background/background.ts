@@ -1,5 +1,3 @@
-import BgStyle from "./background.css"
-
 class BG extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class BG extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = BgStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

@@ -1,5 +1,3 @@
-import uploadImgStyle from "./uploadimg.css"
-
 class UploadImg extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class UploadImg extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = uploadImgStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

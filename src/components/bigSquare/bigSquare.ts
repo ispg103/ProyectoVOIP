@@ -1,5 +1,3 @@
-import bigSquareStyle from "./bigSquare.css"
-
 class BigSquare extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class BigSquare extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = bigSquareStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

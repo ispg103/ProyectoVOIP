@@ -1,4 +1,4 @@
-import homeStyle from "./home.css";
+import dashboardStyle from "./dashboard.css";
 
 
 import Logo from "../../components/logo/logo"
@@ -8,19 +8,23 @@ import Heart from "../../components/heart/heart"
 import Profile from "../../components/profile/profile"
 import { addObserver, appState, dispatch } from "../../store/index";
 
-export class Home extends HTMLElement{
+export class Dashboard extends HTMLElement{
 
     constructor (){
         super();
         this.attachShadow ({mode:"open"});
     }
 
+    connectedCallback(){
+        this.render();
+     }
+
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = ``;
           
             const css = this.ownerDocument.createElement("style");
-            css.innerHTML = homeStyle;
+            css.innerHTML = dashboardStyle;
             this.shadowRoot?.appendChild(css);
         }
 
@@ -58,12 +62,11 @@ export class Home extends HTMLElement{
         const Profile = this.ownerDocument.createElement("my-profile") as Profile;
         image3.appendChild(Profile)
         this.shadowRoot?.appendChild(image3);
-      
 
 
     }
 
 }
 
-customElements.define("my-home", Home);
+customElements.define("my-dashboard", Dashboard);
     

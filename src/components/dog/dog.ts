@@ -1,5 +1,3 @@
-import dogStyle from "./dog.css"
-
 class Dog extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class Dog extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = dogStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

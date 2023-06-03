@@ -1,5 +1,3 @@
-import profileStyle from "./profile.css"
-
 class Profile extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class Profile extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = profileStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

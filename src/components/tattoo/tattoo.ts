@@ -1,5 +1,3 @@
-import tattooStyle from "./tattoo.css"
-
 class Tattoo extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class Tattoo extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = tattooStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `

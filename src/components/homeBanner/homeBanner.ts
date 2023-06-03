@@ -1,4 +1,4 @@
-class Exit extends HTMLElement {
+class HomeBanner extends HTMLElement {
 
     constructor() {
         super();
@@ -15,7 +15,7 @@ class Exit extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-                    <img class="exit" src="/images/x.png">
+                    <img src="/images/mountain.png">
                 </section>
                 `;
             }
@@ -23,5 +23,5 @@ class Exit extends HTMLElement {
         }
 }
 
-customElements.define("my-exit", Exit);
-export default Exit;
+customElements.define("home-banner", HomeBanner);
+export default HomeBanner;

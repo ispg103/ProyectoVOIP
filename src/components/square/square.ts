@@ -1,5 +1,3 @@
-import squareStyle from "./square.css"
-
 class Square extends HTMLElement {
 
     constructor() {
@@ -13,10 +11,6 @@ class Square extends HTMLElement {
 
     
         render() {
-
-            const css = this.ownerDocument.createElement("style");
-            css.innerHTML = squareStyle;
-            this.shadowRoot?.appendChild(css);
 
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
