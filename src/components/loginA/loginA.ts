@@ -1,3 +1,5 @@
+import loginAStyle from "./loginA.css"
+
 class LoginA extends HTMLElement {
 
     constructor() {
@@ -14,11 +16,14 @@ class LoginA extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-                    <p>Login</p>
+                <a href="" class="login">Login</a>
                 </section>
                 `;
             }
 
+            const css = this.ownerDocument.createElement("style");
+            css.innerHTML = loginAStyle;
+            this.shadowRoot?.appendChild(css);
            
         }
 }

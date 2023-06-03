@@ -19,7 +19,7 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const window = this.ownerDocument.createElement('my-homex');
+        const window = this.ownerDocument.createElement('my-upload');
         this.shadowRoot?.appendChild(window);
     }
 }

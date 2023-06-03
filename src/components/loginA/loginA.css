@@ -1,12 +1,12 @@
-.logout{
+.login{
     position: absolute;
     font-family: 'Inter';
-    font-size: small;
-    color: #58CEB8;
+    font-size: medium;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
-.logout:hover{
-    color: rgb(0, 0, 0);
+.login:hover{
+    color: #58CEB8;
     transition: color.3s;
 }

@@ -7,6 +7,7 @@ import Options from "../../components/options/options";
 import HomeBanner from "../../components/homeBanner/homeBanner"
 import HomeText from "../../components/homeText/homeText"
 import DarkLogo from "../../components/darkLogo/darkLogo"
+import LoginA from "../../components/loginA/loginA"
 
 export class Homex extends HTMLElement{
 
@@ -51,6 +52,12 @@ export class Homex extends HTMLElement{
         const HomeText = this.ownerDocument.createElement("home-text") as HomeText;
         text.appendChild(HomeText)
         this.shadowRoot?.appendChild(text);  
+
+        const login = this.ownerDocument.createElement("p")
+        login.className = 'LoginA'
+        const LoginA = this.ownerDocument.createElement("login-a") as LoginA;
+        login.appendChild(LoginA)
+        this.shadowRoot?.appendChild(login);  
 
         const darklogo = this.ownerDocument.createElement("image")
         darklogo.className = 'DarkLogo'
