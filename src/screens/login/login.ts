@@ -13,7 +13,7 @@ import { addObserver, appState, dispatch } from "../../store/index";
 const credentials = { email: "", password: "" };
 
 export default class Login extends HTMLElement{
-  
+
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
@@ -26,8 +26,16 @@ export default class Login extends HTMLElement{
      }
 
      async handleLoginButton() {
-        Firebase.loginUser(credentials);
+        Firebase.LoginUser(credentials);
         console.log(appState.user)
+      }
+
+      changeWindow(){
+        dispatch(navigate(Screens.REGISTER))
+      }
+    
+      backWindow(){
+        dispatch(navigate(Screens.DASHBOARD))
       }
 
     render() {
@@ -49,6 +57,7 @@ export default class Login extends HTMLElement{
         text.className = 'Text'
         const LoginText = this.ownerDocument.createElement("login-text") as LoginText;
         text.appendChild(LoginText)
+        text.addEventListener("click", this.changeWindow);
         this.shadowRoot?.appendChild(text);
 
         const email = this.ownerDocument.createElement("input")

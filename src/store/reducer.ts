@@ -1,13 +1,25 @@
-export const reducer = (action: any, prevState: any) => {
-    switch (action.type) {
-      case "NAVIGATE":
-        prevState.screen = action.payload;
-        break;
-  
-        case "SETUSER":
-        prevState.user = action.payload;
-        break;
+import { NavigateActions, PostActions } from "../types/store";
+import { AppState } from "../types/store";
+import { Actions } from "../types/store";
+
+export const reducer = (actions: Actions, appState: AppState) => {
+  const {action, payload} = actions
+
+
+  switch (action) {
+    case PostActions.SAVE_POST:
+      appState.Post = [...appState.Post, payload]
+      return appState
+
+    case PostActions.GET_POST:
+      appState.Post = payload
+      return appState
+
+    case NavigateActions.NAVIGATE:
+      appState.screens = payload;
+      return appState
+
+    default:
+        return appState
     }
-  
-    return prevState;
-  };
+}
