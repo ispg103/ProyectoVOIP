@@ -1,7 +1,7 @@
 export enum Screens {
-    HOME = "HOME",
+  DASHBOARD = "DASHBOARD",
     LOGIN = "LOGIN",
     REGISTER = "REGISTER",
-    DASHBOARD = "DASHBOARD",
+    HOME = "HOME",
     POST = "POST",
   }

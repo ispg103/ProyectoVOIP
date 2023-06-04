@@ -33,10 +33,6 @@ export default class Login extends HTMLElement{
       changeWindow(){
         dispatch(navigate(Screens.REGISTER))
       }
-    
-      backWindow(){
-        dispatch(navigate(Screens.HOME))
-      }
 
     render() {
         if (this.shadowRoot) {

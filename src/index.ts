@@ -20,11 +20,6 @@ class AppContainer extends HTMLElement {
         if (this.shadowRoot) this.shadowRoot.innerHTML = "";
     
         switch (appState.screens) {
-
-        case Screens.HOME:
-            const Homex = this.ownerDocument.createElement("my-homex");
-            this.shadowRoot?.appendChild(Homex);
-            break;
             
         case Screens.LOGIN:
             const Login = this.ownerDocument.createElement("my-login");
@@ -34,6 +29,11 @@ class AppContainer extends HTMLElement {
         case Screens.REGISTER:
             const Register = this.ownerDocument.createElement("my-register");
             this.shadowRoot?.appendChild(Register);
+            break;
+
+        case Screens.DASHBOARD:
+            const Dashboard = this.ownerDocument.createElement("my-dashboard");
+            this.shadowRoot?.appendChild(Dashboard);
             break;
 
         case Screens.POST:
