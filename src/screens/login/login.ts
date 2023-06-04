@@ -35,7 +35,7 @@ export default class Login extends HTMLElement{
       }
     
       backWindow(){
-        dispatch(navigate(Screens.DASHBOARD))
+        dispatch(navigate(Screens.HOME))
       }
 
     render() {

@@ -59,14 +59,13 @@ export default class Homex extends HTMLElement{
         text.appendChild(HomeText)
         this.shadowRoot?.appendChild(text);  
 
-        const login = this.ownerDocument.createElement("p")
+        const login = this.ownerDocument.createElement("a")
         login.className = 'LoginA'
         const LoginA = this.ownerDocument.createElement("login-a") as LoginA;
         login.appendChild(LoginA)
         dispatch(navigate(Screens.LOGIN));
         this.shadowRoot?.appendChild(login);
           
-
         const darklogo = this.ownerDocument.createElement("image")
         darklogo.className = 'DarkLogo'
         const DarkLogo = this.ownerDocument.createElement("dark-logo") as DarkLogo;
