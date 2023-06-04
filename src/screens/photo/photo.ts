@@ -12,7 +12,7 @@ import UName from "../../components/uName/uName"
 import Describe from "../../components/describe/describe"
 import Exit from "../../components/exit/exit"
 
-export class Photo extends HTMLElement{
+export default class Photo extends HTMLElement{
     constructor (){
         super();
         this.attachShadow ({mode:"open"})

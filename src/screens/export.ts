@@ -1,0 +1,6 @@
+export {default as Homex} from "./homex/homex"
+export {default as Login} from "./login/login"
+export {default as Photo} from "./photo/photo"
+export {default as Post} from "./photo/photo"
+export {default as Upload} from "./upload/upload"
+export {default as Register} from "./register/register"

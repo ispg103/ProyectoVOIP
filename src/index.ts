@@ -1,11 +1,5 @@
 import "./components/export"
-import "./screens/login/login"
-import "./screens/upload/upload"
-import "./screens/photo/photo"
-import "./screens/register/register"
-import "./screens/post/post"
-import "./screens/homex/homex"
-import "./screens/dashboard/dashboard"
+import "./screens/export"
 
 
 class AppContainer extends HTMLElement {
@@ -19,7 +13,7 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const window = this.ownerDocument.createElement('my-homex');
+        const window = this.ownerDocument.createElement('my-login');
         this.shadowRoot?.appendChild(window);
     }
 }

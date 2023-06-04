@@ -12,7 +12,8 @@ import { addObserver, appState, dispatch } from "../../store/index";
 
 const credentials = { email: "", password: "" };
 
-export class Login extends HTMLElement{
+export default class Login extends HTMLElement{
+  
     constructor() {
         super();
         this.attachShadow({ mode: "open" });

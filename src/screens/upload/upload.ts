@@ -16,7 +16,7 @@ import UploadText from "../../components/uploadText/uploadText"
 import UploadImg from "../../components/uploadimg/uploadimg"
 import Exit from "../../components/exit/exit"
 
-export class Upload extends HTMLElement{
+export default class Upload extends HTMLElement{
     constructor (){
         super();
         this.attachShadow ({mode:"open"})

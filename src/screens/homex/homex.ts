@@ -1,6 +1,8 @@
 import homeStyle from "./homex.css";
 
-
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { Screens } from "../../types/navigation";
 import Logo from "../../components/logo/logo";
 import Search  from "../../components/search/search";
 import Options from "../../components/options/options";
@@ -13,7 +15,7 @@ import Chanel from "../../components/chanel/chanel"
 import Inspire from "../../components/inspire/inspire"
 import Create from "../../components/create/create"
 
-export class Homex extends HTMLElement{
+export default class Homex extends HTMLElement{
 
     constructor (){
         super();
@@ -61,7 +63,9 @@ export class Homex extends HTMLElement{
         login.className = 'LoginA'
         const LoginA = this.ownerDocument.createElement("login-a") as LoginA;
         login.appendChild(LoginA)
-        this.shadowRoot?.appendChild(login);  
+        dispatch(navigate(Screens.LOGIN));
+        this.shadowRoot?.appendChild(login);
+          
 
         const darklogo = this.ownerDocument.createElement("image")
         darklogo.className = 'DarkLogo'

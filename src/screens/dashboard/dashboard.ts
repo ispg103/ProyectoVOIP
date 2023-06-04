@@ -8,7 +8,7 @@ import Heart from "../../components/heart/heart"
 import Profile from "../../components/profile/profile"
 import { addObserver, appState, dispatch } from "../../store/index";
 
-export class Dashboard extends HTMLElement{
+export default class Dashboard extends HTMLElement{
 
     constructor (){
         super();

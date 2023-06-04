@@ -7,7 +7,7 @@ import Logo from "../../components/logo/logo"
 
 const credentials = { email: "", password: "" };
 
-export class Register extends HTMLElement{
+export default class Register extends HTMLElement{
     constructor (){
         super();
         this.attachShadow ({mode:"open"})
