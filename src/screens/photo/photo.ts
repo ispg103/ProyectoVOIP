@@ -10,9 +10,6 @@ import Heart from "../../components/heart/heart"
 import Profile from "../../components/profile/profile"
 import BigSquare from "../../components/bigSquare/bigSquare"
 import Tattoo from "../../components/tattoo/tattoo"
-import AddTitle from "../../components/addTitle/addTitle"
-import UName from "../../components/uName/uName"
-import Describe from "../../components/describe/describe"
 import Exit from "../../components/exit/exit"
 
 export default class Photo extends HTMLElement{
@@ -100,20 +97,17 @@ export default class Photo extends HTMLElement{
 
         const addTitle = this.ownerDocument.createElement("h3")
         addTitle.className = 'AddTitle'
-        const AddTitle = this.ownerDocument.createElement("add-title") as AddTitle;
-        addTitle.appendChild(AddTitle)
+        addTitle.textContent = "Title"
         this.shadowRoot?.appendChild(addTitle);
 
         const uName = this.ownerDocument.createElement("p")
         uName.className = 'UName'
-        const UName = this.ownerDocument.createElement("your-name") as UName;
-        uName.appendChild(UName)
+        uName.textContent = "Your name"
         this.shadowRoot?.appendChild(uName);
 
         const describe = this.ownerDocument.createElement("p")
         describe.className = 'Describe'
-        const Describe = this.ownerDocument.createElement("my-describe") as Describe;
-        describe.appendChild(Describe)
+        describe.textContent = "Description"
         this.shadowRoot?.appendChild(describe);
 
     }

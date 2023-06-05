@@ -3,12 +3,22 @@ import homeStyle from "./homex.css";
 import { navigate } from "../../store/actions";
 import { addObserver, appState, dispatch } from "../../store/index";
 import { Screens } from "../../types/navigation";
+import { SavePost, getPosts, setUserCredentials } from "../../store/actions";
+import { Posts } from "../../types/post";
 import Logo from "../../components/logo/logo"
 import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
 import Heart from "../../components/heart/heart"
 import Profile from "../../components/profile/profile"
 import Ideas from "../../components/ideas/ideas"
+
+const formData: Posts = {
+    id: "",
+    image: "",
+    title:"",
+    name: "",
+    description:"",
+};
 
 export default class Homex extends HTMLElement{
 

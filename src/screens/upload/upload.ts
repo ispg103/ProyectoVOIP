@@ -11,9 +11,6 @@ import Profile from "../../components/profile/profile"
 import BigSquare from "../../components/bigSquare/bigSquare"
 import LittleSquare from "../../components/littleSquare/littleSquare"
 import UploadButton from "../../components/uploadBtn/uploadBtn"
-import AddTitle from "../../components/addTitle/addTitle"
-import UName from "../../components/uName/uName"
-import Describe from "../../components/describe/describe"
 import UploadText from "../../components/uploadText/uploadText"
 import UploadImg from "../../components/uploadimg/uploadimg"
 import Exit from "../../components/exit/exit"
@@ -108,22 +105,19 @@ export default class Upload extends HTMLElement{
         uploadBtn.appendChild(UploadButton)
         this.shadowRoot?.appendChild(uploadBtn);
 
-        const addTitle = this.ownerDocument.createElement("a")
+        const addTitle = this.ownerDocument.createElement("input")
         addTitle.className = 'AddTitle'
-        const AddTitle = this.ownerDocument.createElement("add-title") as AddTitle;
-        addTitle.appendChild(AddTitle)
+        addTitle.placeholder = "Add a title"
         this.shadowRoot?.appendChild(addTitle);
 
-        const uName = this.ownerDocument.createElement("p")
+        const uName = this.ownerDocument.createElement("input")
         uName.className = 'UName'
-        const UName = this.ownerDocument.createElement("your-name") as UName;
-        uName.appendChild(UName)
+        uName.placeholder = "Write your name"
         this.shadowRoot?.appendChild(uName);
 
-        const describe = this.ownerDocument.createElement("p")
+        const describe = this.ownerDocument.createElement("input")
         describe.className = 'Describe'
-        const Describe = this.ownerDocument.createElement("my-describe") as Describe;
-        describe.appendChild(Describe)
+        describe.placeholder = "Describe your desing"
         this.shadowRoot?.appendChild(describe);
 
         const uploadText = this.ownerDocument.createElement("h3")

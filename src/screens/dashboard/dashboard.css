@@ -7,7 +7,7 @@
 .Search{
     position: absolute;
     margin-left: 1410px;
-    margin-top: 15px;
+    margin-top: 20px;
     border-radius: 500px;
     border: none;
 }
@@ -15,7 +15,7 @@
 .Options{
     position: absolute;
     margin-left: 1450px;
-    margin-top: 8px;
+    margin-top: 12px;
     border-radius: 500px;
     border: none;
 }
@@ -36,8 +36,8 @@
 
 .LoginA{
     position: absolute;
-    margin-left: 1350px;
-    margin-top: 15px;
+    margin-left: 1347px;
+    margin-top: 20px;
     width: 50px;
 }
 
