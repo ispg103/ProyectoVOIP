@@ -1,5 +1,8 @@
 import uploadStyle from "./photo.css"
 
+import { navigate } from "../../store/actions";
+import { addObserver, appState, dispatch } from "../../store/index";
+import { Screens } from "../../types/navigation";
 import Logo from "../../components/logo/logo"
 import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
@@ -21,6 +24,14 @@ export default class Photo extends HTMLElement{
     connectedCallback(){
         this.render();
      }
+
+     logoutWindow(){
+        dispatch(navigate(Screens.DASHBOARD))
+      } 
+
+      uploadWindow(){
+        dispatch(navigate(Screens.UPLOAD))
+      } 
 
     render() {
         if (this.shadowRoot) {
@@ -46,6 +57,7 @@ export default class Photo extends HTMLElement{
         logout.className = 'Logout'
         const Logout = this.ownerDocument.createElement("my-logout") as Logout;
         logout.appendChild(Logout)
+        logout.addEventListener("click", this.logoutWindow)
         this.shadowRoot?.appendChild(logout);
 
         const image = this.ownerDocument.createElement("button")

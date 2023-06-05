@@ -22,17 +22,21 @@ export default class Login extends HTMLElement{
 
     connectedCallback(){
         this.render();
-        console.log('AppState', appState.user);
      }
 
      async handleLoginButton() {
-        Firebase.LoginUser(credentials);
+        Firebase.loginUser(credentials);
         console.log(appState.user)
       }
 
       changeWindow(){
         dispatch(navigate(Screens.REGISTER))
       }
+
+      nextWindow(){
+        dispatch(navigate(Screens.HOME))
+      }
+
 
     render() {
         if (this.shadowRoot) {
@@ -83,6 +87,7 @@ export default class Login extends HTMLElement{
         const LoginButton = this.ownerDocument.createElement("login-button") as LoginButton;
         button.appendChild(LoginButton)
         button.addEventListener("click", this.handleLoginButton);
+        button.addEventListener("click", this.nextWindow)
         this.shadowRoot?.appendChild(button);
 
         const logo = this.ownerDocument.createElement("logo")

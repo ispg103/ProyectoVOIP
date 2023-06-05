@@ -14,6 +14,7 @@ import {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 const storage = getStorage()
 
@@ -41,13 +42,14 @@ const getFile = async (name: string) => {
   
   })
   .catch((error) => {
+    
   });
 
   console.log(urlimg);
   return urlimg;
 }
 
-const RegisterUser = async ({
+const registerUser = async ({
   email,
   password, 
 }: {
@@ -70,7 +72,7 @@ const RegisterUser = async ({
   }
 };
 
-const LoginUser = async ({
+const loginUser = async ({
   email,
   password,
 }: {
@@ -87,9 +89,6 @@ const LoginUser = async ({
       console.log(errorCode, errorMessage);
   });
 };
-
-/////////////////////// DB
-const db = getFirestore(app);
 
 const SavePost = async (post: Omit<Posts, "id">) => {
   try {
@@ -118,8 +117,8 @@ const GetPost = async () => {
 export default {
   SavePost,
   GetPost,
-  RegisterUser,
-  LoginUser,
+  registerUser,
+  loginUser,
   onAuthStateChanged,
   uploadFile,
   getFile

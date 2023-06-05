@@ -25,12 +25,11 @@ export default class Dashboard extends HTMLElement{
 
     connectedCallback(){
         this.render();
-        console.log('AppState',appState.user);
+        console.log('AppState', appState.user);
     }
 
-
     changeWindow(){
-        dispatch(navigate(Screens.LOGIN)    )
+      dispatch(navigate(Screens.LOGIN))
     }
 
     render() {

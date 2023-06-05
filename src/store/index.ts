@@ -6,19 +6,19 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { navigate, setUserCredentials } from "./actions";
   
-onAuthStateChanged(auth, (user) => {
-  console.log(user)
-  if (user) {
-    user.email !== null ? dispatch(setUserCredentials(user.email)) : '';
-    dispatch(navigate(Screens.HOME))
-  } else {
-    dispatch(navigate(Screens.DASHBOARD));
-  }
-});
+//onAuthStateChanged(auth, (user) => {
+  //console.log(user)
+  //if (user) {
+    //user.email !== null ? dispatch(setUserCredentials(user.email)) : '';
+    //dispatch(navigate(Screens.LOGIN))
+  //} else {
+    //dispatch(navigate(Screens.DASHBOARD));
+  //}
+//});
 
 const emptyState: AppState = {
   Post: [],
-  screens: Screens.DASHBOARD,
+  screens: Screens.LOGIN,
   user: "",
 };
 

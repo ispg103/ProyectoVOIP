@@ -8,6 +8,7 @@ import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
 import Heart from "../../components/heart/heart"
 import Profile from "../../components/profile/profile"
+import Ideas from "../../components/ideas/ideas"
 
 export default class Homex extends HTMLElement{
 
@@ -20,6 +21,14 @@ export default class Homex extends HTMLElement{
     connectedCallback(){
         this.render();
      }
+
+     logoutWindow(){
+        dispatch(navigate(Screens.DASHBOARD))
+      } 
+
+      uploadWindow(){
+        dispatch(navigate(Screens.UPLOAD))
+      } 
 
     render() {
         if (this.shadowRoot) {
@@ -45,12 +54,14 @@ export default class Homex extends HTMLElement{
         logout.className = 'Logout'
         const Logout = this.ownerDocument.createElement("my-logout") as Logout;
         logout.appendChild(Logout)
+        logout.addEventListener("click", this.logoutWindow)
         this.shadowRoot?.appendChild(logout);
 
         const image = this.ownerDocument.createElement("button")
         image.className = 'Add'
         const Add = this.ownerDocument.createElement("my-add") as Add;
         image.appendChild(Add)
+        image.addEventListener("click", this.uploadWindow)
         this.shadowRoot?.appendChild(image);
 
         const image2 = this.ownerDocument.createElement("button")
@@ -65,6 +76,13 @@ export default class Homex extends HTMLElement{
         image3.appendChild(Profile)
         this.shadowRoot?.appendChild(image3);
 
+
+
+        const ideas = this.ownerDocument.createElement("h1")
+        ideas.className = 'Ideas'
+        const Ideas = this.ownerDocument.createElement("my-ideas") as Ideas;
+        ideas.appendChild(Ideas)
+        this.shadowRoot?.appendChild(ideas);
     }
 
 }

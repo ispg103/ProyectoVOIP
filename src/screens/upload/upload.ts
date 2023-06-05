@@ -1,7 +1,9 @@
 import uploadStyle from "./upload.css"
 
+import { navigate } from "../../store/actions";
+import { addObserver, appState, dispatch } from "../../store/index";
+import { Screens } from "../../types/navigation";
 import Logo from "../../components/logo/logo"
-
 import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
 import Heart from "../../components/heart/heart"
@@ -25,6 +27,14 @@ export default class Upload extends HTMLElement{
     connectedCallback(){
         this.render();
      }
+
+     logoutWindow(){
+        dispatch(navigate(Screens.DASHBOARD))
+      } 
+
+      nextWindow(){
+        dispatch(navigate(Screens.HOME))
+      }
 
     render() {
         if (this.shadowRoot) {
@@ -50,6 +60,7 @@ export default class Upload extends HTMLElement{
         logout.className = 'Logout'
         const Logout = this.ownerDocument.createElement("my-logout") as Logout;
         logout.appendChild(Logout)
+        logout.addEventListener("click", this.logoutWindow)
         this.shadowRoot?.appendChild(logout);
 
         const image = this.ownerDocument.createElement("button")
@@ -82,6 +93,7 @@ export default class Upload extends HTMLElement{
         exit.className = 'Exit'
         const Exit = this.ownerDocument.createElement("my-exit") as Exit;
         exit.appendChild(Exit)
+        exit.addEventListener("click", this.nextWindow)
         this.shadowRoot?.appendChild(exit);
 
         const littleSquare = this.ownerDocument.createElement("image")

@@ -36,12 +36,22 @@ class AppContainer extends HTMLElement {
             this.shadowRoot?.appendChild(Dashboard);
             break;
 
-        case Screens.POST:
-            const Post = this.ownerDocument.createElement("my-post");
-            this.shadowRoot?.appendChild(Post);
+        case Screens.PHOTO:
+            const Photo = this.ownerDocument.createElement("my-photo");
+            this.shadowRoot?.appendChild(Photo);
             break;
-    
-          default:
+
+        case Screens.HOME:
+            const Homex = this.ownerDocument.createElement("my-homex");
+            this.shadowRoot?.appendChild(Homex);
+            break;
+
+        case Screens.UPLOAD:
+            const Upload = this.ownerDocument.createElement("my-upload");
+            this.shadowRoot?.appendChild(Upload);
+            break;            
+        
+            default:
             break;
         }
     }

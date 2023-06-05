@@ -1,5 +1,8 @@
 import registerStyle from "./register.css";
 
+import { navigate } from "../../store/actions";
+import { addObserver, appState, dispatch } from "../../store/index";
+import { Screens } from "../../types/navigation";
 import RegisterTitle from "../../components/registerTitle/registerTitle";
 import RegisterButton from "../../components/registerButton/registerButton";
 import BG from "../../components/background/background";
@@ -11,11 +14,17 @@ export default class Register extends HTMLElement{
     constructor (){
         super();
         this.attachShadow ({mode:"open"})
+        addObserver(this);
     }
 
     connectedCallback(){
         this.render();
+        console.log('AppState', appState.user);
      }
+
+     changeWindow(){
+        dispatch(navigate(Screens.HOME))
+      }
 
     render() {
         if (this.shadowRoot) {
@@ -73,7 +82,9 @@ export default class Register extends HTMLElement{
         const button = this.ownerDocument.createElement("section")
         button.className = 'Button'
         const RegisterButton = this.ownerDocument.createElement("register-button") as RegisterButton;
+        button.addEventListener("click", this.changeWindow);
         button.appendChild(RegisterButton)
+
         this.shadowRoot?.appendChild(button);
 
         const logo = this.ownerDocument.createElement("logo")
