@@ -6,11 +6,15 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { navigate, setUserCredentials } from "./actions";
   
-//onAuthStateChanged(auth, (user) => {
-  //console.log(user)
-  //if (user) {
-    //user.email !== null ? dispatch(setUserCredentials(user.email)) : '';
-    //dispatch(navigate(Screens.LOGIN))
+//onAuthStateChanged(auth, async (u: any) => {
+  //console.log('user', u)
+  //if (u) {
+    //u.email !== null ? dispatch(setUserCredentials(u)): '';
+    //appState.userInfo.uid = u.uid
+    //appState.userInfo.email = u.email
+    //const Name = String(u.email).slice(0, -10)
+    //appState.userInfo.name = Name
+    //dispatch(navigate(Screens.HOME));
   //} else {
     //dispatch(navigate(Screens.DASHBOARD));
   //}
@@ -18,8 +22,16 @@ import { navigate, setUserCredentials } from "./actions";
 
 const emptyState: AppState = {
   Post: [],
-  screens: Screens.LOGIN,
+  screens: Screens.DASHBOARD,
   user: "",
+  userInfo: {
+    uid: "",
+    name: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirm: "",
+  }
 };
 
 export let appState = Storage.get<AppState>({

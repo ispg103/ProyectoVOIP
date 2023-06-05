@@ -1,4 +1,4 @@
-import { NavigateActions, PostActions } from "../types/store";
+import { NavigateActions, PostActions, UserActions } from "../types/store";
 import { AppState } from "../types/store";
 import { Actions } from "../types/store";
 
@@ -17,6 +17,14 @@ export const reducer = (actions: Actions, appState: AppState) => {
 
     case NavigateActions.NAVIGATE:
       appState.screens = payload;
+      return appState
+
+    case UserActions.SET_USER:
+      appState.user = payload;
+      return appState
+
+    case UserActions.ADD_USER:
+      appState.userInfo = payload
       return appState
 
     default:

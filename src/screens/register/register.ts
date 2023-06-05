@@ -1,14 +1,22 @@
 import registerStyle from "./register.css";
 
-import { navigate } from "../../store/actions";
+import { navigate, addUser } from "../../store/actions";
 import { addObserver, appState, dispatch } from "../../store/index";
 import { Screens } from "../../types/navigation";
+import Firebase from "../../utils/firebase";
 import RegisterTitle from "../../components/registerTitle/registerTitle";
 import RegisterButton from "../../components/registerButton/registerButton";
 import BG from "../../components/background/background";
 import Logo from "../../components/logo/logo"
 
-const credentials = { email: "", password: "" };
+const credentials = { 
+  uid: "",
+  name: "",
+  lastName: "",
+  email: "", 
+  password: "",
+  confirm: "", 
+};
 
 export default class Register extends HTMLElement{
     constructor (){
@@ -19,11 +27,20 @@ export default class Register extends HTMLElement{
 
     connectedCallback(){
         this.render();
-        console.log('AppState', appState.user);
      }
 
      changeWindow(){
         dispatch(navigate(Screens.HOME))
+      }
+
+      async handleRegisterButton() {
+        const user = await Firebase.registerUser(credentials);
+        dispatch(await addUser(credentials))
+        console.log(user);
+        if(user) {
+          dispatch(navigate(Screens.HOME)) 
+          sessionStorage.clear();
+        };
       }
 
     render() {

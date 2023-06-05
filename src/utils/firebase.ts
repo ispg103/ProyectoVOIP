@@ -1,8 +1,9 @@
 import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, onSnapshot, addDoc, getDocs, query, orderBy } from "firebase/firestore";
+import { getFirestore, collection, doc, onSnapshot, setDoc, addDoc, getDocs, query, orderBy } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
 import { Posts } from "../types/post";
+import { User } from "../types/user"; 
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -90,6 +91,16 @@ const loginUser = async ({
   });
 };
 
+const AddUser = async (user: User) =>{
+  try {
+    await setDoc(doc(db, "users", user.uid), user)
+    return true
+  } catch (e) {
+    console.error("Error adding user: ", e);
+    return false
+  }
+}
+
 const SavePost = async (post: Omit<Posts, "id">) => {
   try {
     const where = collection(db, "posts");
@@ -117,6 +128,7 @@ const GetPost = async () => {
 export default {
   SavePost,
   GetPost,
+  AddUser,
   registerUser,
   loginUser,
   onAuthStateChanged,

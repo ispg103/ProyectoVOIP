@@ -1,12 +1,21 @@
 import { Posts } from "../types/post";
-import { Actions, NavigateActions, PostActions, UserActions } from "../types/store";
+import { User } from "../types/user";
+import { Actions, NavigateActions, PostActions, UserActions, SetUser, AddUser} from "../types/store";
 import firebase from "../utils/firebase";
 import { Screens } from "../types/navigation";
 
-export const setUserCredentials = (user: string) => {
+export const setUserCredentials = (user: string): SetUser => {
   return {
     action: UserActions.SET_USER,
     payload: user,
+  };
+};
+
+export const addUser = (user: User): AddUser =>{
+  
+  return{
+      action: UserActions.ADD_USER,
+      payload: user,
   };
 };
 
