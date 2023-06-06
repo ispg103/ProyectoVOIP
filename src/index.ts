@@ -36,11 +36,6 @@ class AppContainer extends HTMLElement {
             this.shadowRoot?.appendChild(Dashboard);
             break;
 
-        case Screens.PHOTO:
-            const Photo = this.ownerDocument.createElement("my-photo");
-            this.shadowRoot?.appendChild(Photo);
-            break;
-
         case Screens.HOME:
             const Homex = this.ownerDocument.createElement("my-homex");
             this.shadowRoot?.appendChild(Homex);

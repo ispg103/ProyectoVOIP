@@ -10,43 +10,43 @@ export type AppState = {
     userInfo: User;
   };
 
-  export enum UserActions {
-    "SET_USER" = "SET_USER",
-    "ADD_USER" = "ADD_USER",
-  }
-
   export enum PostActions {
     "SAVE_POST" = "SAVE_POST",
     "GET_POST" = "GET_POST",
   }
 
+  export enum AuthActions {
+    "LOGIN" = "LOGIN",
+    "LOGOUT" = "LOGOUT",
+}
+
   export enum NavigateActions {
     "NAVIGATE" = "NAVIGATE",
   }
+
+  export interface LogInAction {
+    action: AuthActions.LOGIN,
+    payload: Pick<AppState, "user">
+}
+
+export interface LogOutAction {
+  action: AuthActions.LOGOUT,
+  payload: void
+}
 
   export interface Navigate {
     action: NavigateActions.NAVIGATE;
     payload: Screens
   }
 
-  export interface SavePost {
+  export interface SavePostAction {
     action: PostActions.SAVE_POST;
     payload: Posts
   }
   
-  export interface GetPost {
+  export interface GetPostAction {
     action: PostActions.GET_POST;
     payload: Posts[]
   }
 
-  export interface SetUser{
-    action: UserActions.SET_USER;
-    payload: string
-}
-
-export interface AddUser {
-  action: UserActions.ADD_USER,
-  payload: User
-}
-
-  export type Actions = Navigate | SavePost | GetPost | SetUser | AddUser ;
+  export type Actions = Navigate | SavePostAction | GetPostAction ;

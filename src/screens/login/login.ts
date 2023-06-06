@@ -5,6 +5,7 @@ import LoginButton from "../../components/loginButton/loginButton";
 import LoginText from "../../components/loginText/loginText";
 import BG from "../../components/background/background";
 import Logo from "../../components/logo/logo"
+import Square from "../../components/square/square"
 import { navigate } from "../../store/actions";
 import Firebase from "../../utils/firebase";
 import { Screens } from "../../types/navigation";

@@ -91,44 +91,30 @@ const loginUser = async ({
   });
 };
 
-const AddUser = async (user: User) =>{
+const savePostInDB = async (post: Posts) => {
   try {
-    await setDoc(doc(db, "users", user.uid), user)
-    return true
+      await addDoc(collection(db, "Posts"), post);
   } catch (e) {
-    console.error("Error adding user: ", e);
-    return false
-  }
-}
-
-const SavePost = async (post: Omit<Posts, "id">) => {
-  try {
-    const where = collection(db, "posts");
-    await addDoc(where, { ...post, createdAt: new Date() });
-    console.log("Added succesfully");
-  } catch (error) {
-    console.error(error);
+      console.error("Error adding document: ", e);
   }
 };
 
-
-const GetPost = async () => {
-  const q = query(collection(db, "posts"), orderBy("createdAt"));
-  const querySnapshot = await getDocs(q);
-  const transformed: Array<Posts> = [];
-
+const getPostFromDB = async (): Promise<Posts[]> => {
+  console.log("Getting posts...")
+  const photo: Posts[] = [];
+  const querySnapshot = await getDocs(collection(db, "Posts"));
   querySnapshot.forEach((doc) => {
-    const data: Omit<Posts, "id"> = doc.data() as any;
-    transformed.push({ id: doc.id, ...data });
+      console.log(`${doc.id} => ${doc.data()}`);
+      photo.push({
+          ...doc.data(),
+      } as Posts)
   });
-
-  return transformed;
+  return photo;
 };
 
 export default {
-  SavePost,
-  GetPost,
-  AddUser,
+  savePostInDB,
+  getPostFromDB,
   registerUser,
   loginUser,
   onAuthStateChanged,

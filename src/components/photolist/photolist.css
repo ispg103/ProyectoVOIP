@@ -1,0 +1,38 @@
+/* Estilo para el contenedor de la lista */
+article {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilo para las imágenes */
+img {
+  margin-top: 200px;
+  margin-left: 100px;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Animación para que las imágenes aparezcan al lado de cada una */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aplicar la animación a las imágenes cuando entran en la pantalla */
+img {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+
+  

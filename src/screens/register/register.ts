@@ -1,6 +1,6 @@
 import registerStyle from "./register.css";
 
-import { navigate, addUser } from "../../store/actions";
+import { navigate } from "../../store/actions";
 import { addObserver, appState, dispatch } from "../../store/index";
 import { Screens } from "../../types/navigation";
 import Firebase from "../../utils/firebase";
@@ -34,13 +34,8 @@ export default class Register extends HTMLElement{
       }
 
       async handleRegisterButton() {
-        const user = await Firebase.registerUser(credentials);
-        dispatch(await addUser(credentials))
-        console.log(user);
-        if(user) {
-          dispatch(navigate(Screens.HOME)) 
-          sessionStorage.clear();
-        };
+        Firebase.registerUser(credentials);
+        console.log(appState.user)
       }
 
     render() {

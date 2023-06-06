@@ -4,7 +4,7 @@ import { Screens } from "../types/navigation";
 import { reducer } from "./reducer";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { navigate, setUserCredentials } from "./actions";
+import { navigate } from "./actions";
   
 //onAuthStateChanged(auth, async (u: any) => {
   //console.log('user', u)
@@ -25,12 +25,8 @@ const emptyState: AppState = {
   screens: Screens.DASHBOARD,
   user: "",
   userInfo: {
-    uid: "",
-    name: "",
-    lastName: "",
     email: "",
     password: "",
-    confirm: "",
   }
 };
 

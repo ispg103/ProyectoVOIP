@@ -3,7 +3,7 @@ import homeStyle from "./homex.css";
 import { navigate } from "../../store/actions";
 import { addObserver, appState, dispatch } from "../../store/index";
 import { Screens } from "../../types/navigation";
-import { SavePost, getPosts, setUserCredentials } from "../../store/actions";
+import { savePost, getPost } from "../../store/actions";
 import { Posts } from "../../types/post";
 import Logo from "../../components/logo/logo"
 import Logout from "../../components/logout/logout"
@@ -13,11 +13,7 @@ import Profile from "../../components/profile/profile"
 import Ideas from "../../components/ideas/ideas"
 
 const formData: Posts = {
-    id: "",
     image: "",
-    title:"",
-    name: "",
-    description:"",
 };
 
 export default class Homex extends HTMLElement{
@@ -93,6 +89,9 @@ export default class Homex extends HTMLElement{
         const Ideas = this.ownerDocument.createElement("my-ideas") as Ideas;
         ideas.appendChild(Ideas)
         this.shadowRoot?.appendChild(ideas);
+
+        const photolist = this.ownerDocument.createElement('photo-list');
+        this.shadowRoot?.appendChild(photolist);
     }
 
 }

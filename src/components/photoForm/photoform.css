@@ -1,0 +1,42 @@
+/* Estilo para el contenedor del formulario */
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilo para las etiquetas del formulario */
+label {
+  font-weight: bold;
+  margin-top: 150px;
+  font-family: 'Inter';
+  margin-left: 580px;
+}
+
+/* Estilo para los campos de entrada del formulario */
+input {
+  width: 19%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-left: 580px;
+}
+
+/* Estilo para el botón de enviar */
+button {
+  padding: 10px 20px;
+  background-color: #75DAC7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 20%;
+  margin-left: 580px;
+}
+
+/* Estilo para el botón de enviar al pasar el ratón por encima */
+button:hover {
+  background-color: #00d4ad;
+  transform: scale(1.1);
+}
+
+  
