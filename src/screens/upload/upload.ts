@@ -1,8 +1,9 @@
 import uploadStyle from "./upload.css"
 
-import { navigate } from "../../store/actions";
+import { SavePost, navigate } from "../../store/actions";
 import { addObserver, appState, dispatch } from "../../store/index";
 import { Screens } from "../../types/navigation";
+import firebase from "../../utils/firebase";
 import Logo from "../../components/logo/logo"
 import Logout from "../../components/logout/logout"
 import Add from "../../components/add/add"
@@ -11,9 +12,18 @@ import Profile from "../../components/profile/profile"
 import BigSquare from "../../components/bigSquare/bigSquare"
 import LittleSquare from "../../components/littleSquare/littleSquare"
 import UploadButton from "../../components/uploadBtn/uploadBtn"
-import UploadText from "../../components/uploadText/uploadText"
 import UploadImg from "../../components/uploadimg/uploadimg"
 import Exit from "../../components/exit/exit"
+import { Posts } from "../../types/post";
+
+
+const formData: Posts = {
+    id: "",
+    image: "",
+    title: "",
+    name: "",
+    description: "",
+  };
 
 export default class Upload extends HTMLElement{
     constructor (){
@@ -31,6 +41,10 @@ export default class Upload extends HTMLElement{
 
       nextWindow(){
         dispatch(navigate(Screens.HOME))
+      }
+
+      changeTitle(e: any) {
+        formData.title = e?.target?.value;
       }
 
     render() {
@@ -92,6 +106,7 @@ export default class Upload extends HTMLElement{
         exit.appendChild(Exit)
         exit.addEventListener("click", this.nextWindow)
         this.shadowRoot?.appendChild(exit);
+        
 
         const littleSquare = this.ownerDocument.createElement("image")
         littleSquare.className = 'LittleSquare'
@@ -103,11 +118,15 @@ export default class Upload extends HTMLElement{
         uploadBtn.className = 'UploadButton'
         const UploadButton = this.ownerDocument.createElement("upload-button") as UploadButton;
         uploadBtn.appendChild(UploadButton)
+        exit.addEventListener("click", async () => {
+            dispatch(await SavePost(formData))
+        })
         this.shadowRoot?.appendChild(uploadBtn);
 
         const addTitle = this.ownerDocument.createElement("input")
         addTitle.className = 'AddTitle'
         addTitle.placeholder = "Add a title"
+        addTitle.addEventListener("change", this.changeTitle);
         this.shadowRoot?.appendChild(addTitle);
 
         const uName = this.ownerDocument.createElement("input")
@@ -120,10 +139,22 @@ export default class Upload extends HTMLElement{
         describe.placeholder = "Describe your desing"
         this.shadowRoot?.appendChild(describe);
 
-        const uploadText = this.ownerDocument.createElement("h3")
+        const uploadText = this.ownerDocument.createElement("input")
+        uploadText.type = "file"
         uploadText.className = 'UploadText'
-        const UploadText = this.ownerDocument.createElement("upload-text") as UploadText;
-        uploadText.appendChild(UploadText)
+        uploadText.placeholder = "Upload your design"
+        uploadText.addEventListener("change", async () =>{
+            const file = uploadText.files?.[0];
+            if (file) await firebase.uploadFile(file);
+            console.log(file?.name);
+            if (file) {
+              const image = await firebase.getFile(file.name);
+              console.log("img", image);
+              const src = String(image)
+              formData.image = src
+          }
+          });
+      
         this.shadowRoot?.appendChild(uploadText);
 
         const uploadImg = this.ownerDocument.createElement("image")
