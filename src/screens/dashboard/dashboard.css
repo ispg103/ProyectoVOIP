@@ -65,3 +65,74 @@
     left: 345px;
     top: 1850px;
 }
+
+@media (max-width: 414px){
+    .Logo{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .Search{
+        position: absolute;
+        margin-left: 1410px;
+        margin-top: 20px;
+        border-radius: 500px;
+        border: none;
+    }
+    
+    .Options{
+        position: absolute;
+        margin-left: 1450px;
+        margin-top: 12px;
+        border-radius: 500px;
+        border: none;
+    }
+    
+    .HomeText{
+        width: 1000px;
+        font-family: 'Inter';
+        position: absolute;
+        color: white;
+        margin-top: 1000px;
+        margin-left: 510px;
+    }
+    
+    .DarkLogo{
+        position: absolute;
+        margin-top: 620px;
+        margin-left: 690px;
+    }
+    
+    .LoginA{
+        position: absolute;
+        margin-left: 1347px;
+        margin-top: 20px;
+        width: 50px;
+    }
+    
+    .Cheers{
+        position: absolute;
+        top: 1150px;
+        left: 180px;
+        border-radius: 20px;
+    }
+    
+    .Chanel{
+        position: absolute;
+        top: 1740px;
+        left: 930px;
+    }
+    
+    .Inspire{
+        position: absolute;
+        left: 935px;
+        top: 1265px;
+    }
+    
+    .Create{
+        position: absolute;
+        left: 345px;
+        top: 1850px;
+    }
+}
