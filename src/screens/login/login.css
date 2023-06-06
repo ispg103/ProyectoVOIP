@@ -40,7 +40,43 @@
 }
 
 @media all and (max-width:320px){
-    .Background{
-        width: 0px;
+    .Title{
+        position: absolute;
+    }
+    
+    .Text{
+        position: absolute;
+        color: aqua;
+    }
+    
+    .User{
+        position: absolute;
+        left: 630px;
+        top: 275px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ECECEC;
+        width: 250px;
+        height: 40px;
+        text-align: center;
+    }
+    
+    .Password{
+        position: absolute;
+        left: 630px;
+        top: 345px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ECECEC;
+        width: 250px;
+        height: 40px;
+        text-align: center;
+    }
+    
+    .Logo{
+        position: absolute;
+        width: 100px;
+        top: 630px;
+        left: 920px;
     }
 }

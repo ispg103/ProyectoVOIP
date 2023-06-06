@@ -1,9 +1,8 @@
 import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, onSnapshot, setDoc, addDoc, getDocs, query, orderBy } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getStorage} from "firebase/storage";
 import { Posts } from "../types/post";
-import { User } from "../types/user"; 
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -18,37 +17,6 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 const storage = getStorage()
-
-const uploadFile = async (file: File) => {
-  const storageRef = ref(storage, file.name);
-  const res = await uploadBytes(storageRef, file);
-  console.log("file uploaded", res);
-};
-
-const getFile = async (name: string) => {
-  let urlimg = '';
-
-  await getDownloadURL(ref(storage, name))
-  .then((url) => {
-
-    const xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = (event) => {
-      const blob = xhr.response;
-    };
-    xhr.open('GET', url);
-    xhr.send();
-
-    urlimg = url;
-  
-  })
-  .catch((error) => {
-    
-  });
-
-  console.log(urlimg);
-  return urlimg;
-}
 
 const registerUser = async ({
   email,
@@ -118,6 +86,4 @@ export default {
   registerUser,
   loginUser,
   onAuthStateChanged,
-  uploadFile,
-  getFile
 };
