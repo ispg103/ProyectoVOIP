@@ -1,7 +1,7 @@
-/* Estilo para las imágenes */
+
 img {
-  margin-left: 100px;
-  width: 200px;
+  margin-left: 35%;
+  width: 380px;
   height: auto;
   object-fit: cover;
   border: 1px solid #ffffff;

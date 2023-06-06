@@ -14,7 +14,7 @@ class photolist extends HTMLElement {
     }
 
     render() {
-        if (this.shadowRoot) this.shadowRoot.innerHTML = ""
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ''
 
         appState.Post.forEach((e: any) => {
             const formContainer = this.ownerDocument.createElement('article')
