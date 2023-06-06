@@ -38,3 +38,9 @@
     left: 92%;
 
 }
+
+@media all and (max-width:320px){
+    .Background{
+        width: 0px;
+    }
+}

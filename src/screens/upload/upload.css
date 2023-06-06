@@ -64,3 +64,72 @@
     left: 33%;
     border: none;
 }
+
+@media all and (max-width:320px){
+    .Logo{
+        position: absolute;
+        border: none;
+        border-radius: 50px;
+        background-color: #ffffff;
+    }
+    
+    .SearchBar{
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 200px;
+        width: 250px;
+        height: 25px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+    }
+    
+    .Logout{
+        position: absolute;
+        margin-left: 520px;
+        width: 50px;
+        margin-top: 18px;
+    }
+    
+    .Add{
+        position: absolute;
+        margin-left: 580px;
+        margin-top: 8px;
+        border-radius: 500px;
+        border: none;
+        height: 35px;
+        width: 43px;
+        background-color: #ffffff;
+    }
+    
+    .Heart{
+        position: absolute;
+        margin-left: 625px;
+        margin-top: 8px;
+        border-radius: 500px;
+        border: none;
+        height: 35px;
+        width: 43px;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+    
+    .Profile{
+        position: absolute;
+        margin-left: 670px;
+        margin-top: 8px;
+        border-radius: 500px;
+        border: none;
+        height: 35px;
+        width: 43px;
+        background-color: #ffffff;
+    }
+    
+    
+    .Exit{
+        position: absolute;
+        top: 35%;
+        left: 73%;
+        border: none;
+    }
+}
