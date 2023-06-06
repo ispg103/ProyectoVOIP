@@ -75,7 +75,7 @@
     
     .Search{
         position: absolute;
-        margin-left: 1410px;
+        margin-left: 965px;
         margin-top: 20px;
         border-radius: 500px;
         border: none;
@@ -83,7 +83,7 @@
     
     .Options{
         position: absolute;
-        margin-left: 1450px;
+        margin-left: 1000px;
         margin-top: 12px;
         border-radius: 500px;
         border: none;
@@ -95,18 +95,18 @@
         position: absolute;
         color: white;
         margin-top: 480px;
-        margin-left: 510px;
+        margin-left: 320px;
     }
     
     .DarkLogo{
         position: absolute;
         margin-top: 620px;
-        margin-left: 690px;
+        margin-left: 500px;
     }
     
     .LoginA{
         position: absolute;
-        margin-left: 1347px;
+        margin-left: 900px;
         margin-top: 20px;
         width: 50px;
     }
@@ -114,25 +114,25 @@
     .Cheers{
         position: absolute;
         top: 1150px;
-        left: 180px;
+        left: 140px;
         border-radius: 20px;
     }
     
     .Chanel{
         position: absolute;
         top: 1740px;
-        left: 930px;
+        left: 630px;
     }
     
     .Inspire{
         position: absolute;
-        left: 935px;
+        left: 735px;
         top: 1265px;
     }
     
     .Create{
         position: absolute;
-        left: 345px;
+        left: 205px;
         top: 1850px;
     }
 }
