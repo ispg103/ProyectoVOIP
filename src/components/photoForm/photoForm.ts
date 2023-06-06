@@ -1,6 +1,8 @@
 import { dispatch } from "../../store";
 import { savePost } from "../../store/actions";
 import { Posts } from "../../types/post";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/navigation";
 import styles from "./photoform.css";
 
 const postInput: Posts = {
@@ -16,6 +18,10 @@ class photoform extends HTMLElement {
     connectedCallback() {
         this.render()
     }
+
+    changeWindow(){
+        dispatch(navigate(Screens.HOME))
+      }
 
     render() {
         const formContainer = this.ownerDocument.createElement('article')

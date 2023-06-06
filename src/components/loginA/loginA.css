@@ -10,3 +10,18 @@
     color: #58CEB8;
     transition: color.3s;
 }
+
+@media all and (max-width:430px){
+    .login{
+        position: absolute;
+        font-family: 'Inter';
+        font-size: large;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    
+    .login:hover{
+        color: #58CEB8;
+        transition: color.3s;
+    }
+}
